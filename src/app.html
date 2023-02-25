@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		%sveltekit.head%
+	</head>
+	<!-- https://kit.svelte.dev/docs/link-options#data-sveltekit-preload-data -->
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+
+	<noscript>
+		<style type="text/css">
+			.pagecontainer {
+				display: none;
+			}
+		</style>
+		<div class="noscriptmsg">You don't have javascript enabled. Good luck with that.</div>
+	</noscript>
+</html>
