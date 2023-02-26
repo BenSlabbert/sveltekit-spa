@@ -24,6 +24,15 @@ lint:
 fmt:
 	yarn run format
 
+.PHONY: test
+test:
+	yarn playwright test
+
+.PHONY: showReport
+showReport:
+	yarn playwright show-report
+
 .PHONY: clean
 clean:
 	rm -rf build
+	rm -rf playwright-report
