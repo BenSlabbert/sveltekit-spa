@@ -8,6 +8,10 @@ install:
 build:
 	yarn run build
 
+.PHONY: buildDocker
+buildDocker:
+	docker buildx build . -t sveltekit-spa:latest
+
 .PHONY: check
 check:
 	yarn run check

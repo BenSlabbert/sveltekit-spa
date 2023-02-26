@@ -1,5 +1,4 @@
 .yarn
-build/
 node_modules/
 .idea
 .pnp.*
