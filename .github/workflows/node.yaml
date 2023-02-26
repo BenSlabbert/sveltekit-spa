@@ -20,26 +20,16 @@ jobs:
       - run: make check
       - run: make lint
       - run: make build
+      - name: Install Playwright Browsers
+        run: yarn playwright install --with-deps
+      - name: Run Playwright tests
+        run: yarn playwright test
       - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: build
           path: build/
           retention-days: 30
-  test:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - name: Install dependencies
-        run: yarn
-      - name: Install Playwright Browsers
-        run: yarn playwright install --with-deps
-      - name: Run Playwright tests
-        run: yarn playwright test
       - uses: actions/upload-artifact@v3
         if: always()
         with:
