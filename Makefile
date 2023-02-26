@@ -12,6 +12,10 @@ build:
 buildDocker:
 	docker buildx build . -t sveltekit-spa:latest
 
+.PHONY: dockerSave
+dockerSave:
+	docker save sveltekit-spa:latest | gzip > sveltekit-spa_latest.tar.gz
+
 .PHONY: check
 check:
 	yarn run check
@@ -40,3 +44,4 @@ showReport:
 clean:
 	rm -rf build
 	rm -rf playwright-report
+	rm -f sveltekit-spa_latest.tar.gz
